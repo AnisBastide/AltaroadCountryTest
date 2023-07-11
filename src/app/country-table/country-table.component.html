@@ -10,8 +10,8 @@
     <th scope="col">Image</th>
     <th scope="col"></th>
   </tr>
-    <tr *ngFor="let country of countries;">
-      <th scope="row">{{country.name}}</th>
+    <tr *ngFor="let country of countries; let i = index" [attr.data-index]="i">
+      <th scope="row"><a href="/details-page/{{i}}">{{country.name}}</a></th>
       <td>{{country.population}}</td>
       <td>{{country.size}}</td>
       <td>{{country.continent}}</td>
