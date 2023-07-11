@@ -1,0 +1,13 @@
+
+#header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.buttonContainer{
+  display: flex;
+  gap : 10px;
+  flex-wrap: wrap;
+}
