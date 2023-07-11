@@ -1,0 +1,25 @@
+#header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.buttonContainer{
+  display: flex;
+  gap : 10px;
+  flex-wrap: wrap;
+}
+
+.buttonSubContainer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* --- childrens */
+
+.buttonContainer button{
+  width: 150px;
+}
