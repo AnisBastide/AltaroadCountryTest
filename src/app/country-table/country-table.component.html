@@ -1,0 +1,22 @@
+
+<table>
+  <caption>Country List</caption>
+  <tr>
+    <th scope="col">Nom ⬇</th>
+    <th scope="col">Population ⬇</th>
+    <th scope="col">Superficie ⬇</th>
+    <th scope="col">Continent ⬇</th>
+    <th scope="col">Produit intérieur brut ⬇</th>
+    <th scope="col">Image</th>
+    <th scope="col"></th>
+  </tr>
+    <tr *ngFor="let country of countries;">
+      <th scope="row">{{country.name}}</th>
+      <td>{{country.population}}</td>
+      <td>{{country.size}}</td>
+      <td>{{country.continent}}</td>
+      <td>{{country.GDP}}</td>
+      <td><img src="{{country.image}}"></td>
+      <td><button>✏</button></td>
+    </tr>
+</table>
