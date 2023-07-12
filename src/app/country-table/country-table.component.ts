@@ -17,6 +17,7 @@ export class CountryTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.app.filteredCountries = [];
     this.app.countries.forEach((country) => {this.app.filteredCountries.push(country)})
   }
 

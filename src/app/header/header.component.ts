@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   }
   public toggleVisibility(){
     this.searchBarVisibility = !this.searchBarVisibility
-    console.log(this.searchBarVisibility)
   }
   public search(event:Event){
     this.countryTable.search(event)
