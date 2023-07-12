@@ -15,11 +15,10 @@ export class CountryDetailsComponent implements OnInit {
   constructor(private route:ActivatedRoute,public app :AppComponent) {
   }
 
-   ngOnInit(): void {
-      this.app.filteredCountries = [];
-     this.app.countries.forEach((country) => {this.app.filteredCountries.push(country)});
-     this.route.params.subscribe( params => this.id = params["id"] );
-     this.country = this.app.filteredCountries[this.id];
+  ngOnInit(): void {
+    this.app.filteredCountries = [];
+    this.app.countries.forEach((country) => {this.app.filteredCountries.push(country)});
+    this.route.params.subscribe( params => this.id = params["id"] );
+    this.country = this.app.filteredCountries[this.id];
   }
-}\
 }
