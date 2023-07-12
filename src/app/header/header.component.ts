@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {CountryTableComponent} from "../country-table/country-table.component";
 import {CountryModalComponent} from "../country-modal/country-modal.component";
 import {MatDialog} from "@angular/material/dialog";
-import {Country} from "../utils/type";
 import * as FileSaver from "file-saver";
 
 @Component({
@@ -24,7 +23,7 @@ export class HeaderComponent implements OnInit {
   }
   public search(){
     console.log('qqqq')
-    this.countryTable.filterByName(this.searchQuery)
+    this.countryTable.search(this.searchQuery)
   }
 
   public openDialog(): void {

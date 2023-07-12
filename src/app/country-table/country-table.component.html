@@ -17,6 +17,6 @@
       <td>{{country.continent}}</td>
       <td>{{country.GDP}}</td>
       <td><img src="{{country.image}}" class="images"></td>
-      <td><button>✏</button></td>
+      <td><button (click)="openDialog(country)">✏</button></td>
     </tr>
 </table>

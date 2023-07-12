@@ -1,7 +1,7 @@
 <div id="body">
-<h1 mat-dialog-title>Ajouter un pays</h1>
+<h1 mat-dialog-title>{{title}}</h1>
 <div mat-dialog-content id="inputs">
-  <input matInput [placeholder]="'Nom'" [value]="name" (change)="updateName($event)">
+  <input matInput [placeholder]="'Nom'" [value]="name" (change)="updateName($event)" [disabled]="isModify">
   <input matInput [placeholder]="'Population'" [value]="population" (change)="updatePopulation($event)">
   <input matInput [placeholder]="'Superficie'" [value]="size" (change)="updateSize($event)">
   <mat-select [value]="continent" (change)="updateContinent($event)">
