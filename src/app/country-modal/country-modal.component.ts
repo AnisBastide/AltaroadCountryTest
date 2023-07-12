@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Continent, Country} from "../utils/type";
 import {CountryTableComponent} from "../country-table/country-table.component";
 import {MatDialogRef } from "@angular/material/dialog";
+import {MatSelectChange} from "@angular/material/select";
 
 @Component({
   selector: 'app-country-modal',
@@ -49,8 +50,8 @@ export class CountryModalComponent implements OnInit {
   public updateSize(event:Event){
     this.size = (event.target as HTMLInputElement).value
   }
-  public updateContinent(event:Event){
-    this.continent = (event.target as HTMLInputElement).value as Continent
+  public updateContinent(event: MatSelectChange){
+    this.continent = event.value
   }
   public updateGdp(event:Event){
     this.Gdp = (event.target as HTMLInputElement).value

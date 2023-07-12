@@ -4,7 +4,7 @@
   <input matInput [placeholder]="'Nom'" [value]="name" (change)="updateName($event)" [disabled]="isModify">
   <input matInput type="number" [placeholder]="'Population'" [value]="population" (change)="updatePopulation($event)">
   <input matInput type="number" [placeholder]="'Superficie'" [value]="size" (change)="updateSize($event)">
-  <mat-select [value]="continent" (change)="updateContinent($event)">
+  <mat-select [value]="continent" (selectionChange)="updateContinent($event)">
     <mat-option [value]="continentType.Europe">{{continentType.Europe}}</mat-option>
     <mat-option [value]="continentType.Africa">{{continentType.Africa}}</mat-option>
     <mat-option [value]="continentType.Asia">{{continentType.Asia}}</mat-option>
