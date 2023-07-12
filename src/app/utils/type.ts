@@ -3,7 +3,7 @@ export interface Country {
   population:number;
   size:number;
   continent:Continent;
-  GDP:number;
+  Gdp:number;
   image:string;
 }
 export enum Continent {

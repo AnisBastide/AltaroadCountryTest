@@ -2,21 +2,21 @@
 <table>
   <caption>Country List</caption>
   <tr>
-    <th scope="col">Nom ⬇</th>
-    <th scope="col">Population ⬇</th>
-    <th scope="col">Superficie ⬇</th>
-    <th scope="col">Continent ⬇</th>
-    <th scope="col">Produit intérieur brut ⬇</th>
+    <th scope="col" ><button (click)="callFilter(app.filteredCountries,'name')">Nom ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'population')">Population ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'size')">Superficie ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'continent')">Continent ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'gdp')">Produit intérieur brut ⬇</button></th>
     <th scope="col">Image</th>
     <th scope="col"></th>
   </tr>
-    <tr *ngFor="let country of countries; let i = index" [attr.data-index]="i">
+    <tr *ngFor="let country of app.filteredCountries; let i = index">
       <th scope="row"><a href="/details-page/{{i}}">{{country.name}}</a></th>
       <td>{{country.population}}</td>
       <td>{{country.size}}</td>
       <td>{{country.continent}}</td>
-      <td>{{country.GDP}}</td>
-      <td><img src="{{country.image}}"></td>
-      <td><button>✏</button></td>
+      <td>{{country.Gdp}}</td>
+      <td><img src="{{country.image}}" class="images"></td>
+      <td><button (click)="openDialog(country)">✏</button></td>
     </tr>
 </table>
