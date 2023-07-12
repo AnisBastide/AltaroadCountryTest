@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './details/details.component';
 import {RouterModule} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import { CountryModalComponent } from './country-modal/country-modal.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     CountryDetailsComponent,
     DetailsComponent,
     HomeComponent,
+    CountryModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,9 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     AppRoutingModule,
     RouterModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [CountryTableComponent],
   bootstrap: [AppComponent]

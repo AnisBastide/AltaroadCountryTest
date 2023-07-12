@@ -4,9 +4,9 @@
   <div class="buttonContainer">
     <input type="text" [hidden]="!searchBarVisibility" [value]="searchQuery" (change)="search()"/>
     <button mat-stroked-button color="Basic" (click)="toggleVisibility()">Recherche</button>
-    <button mat-stroked-button color="accent">Exporter en CSV</button>
+    <button mat-stroked-button color="accent" (click)="csvDownload()">Exporter en CSV</button>
     <div class="buttonSubContainer">
-    <button mat-stroked-button color="primary">Ajouter</button>
+    <button mat-stroked-button color="primary" (click)="openDialog()">Ajouter</button>
     </div>
   </div>
 
