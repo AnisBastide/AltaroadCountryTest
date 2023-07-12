@@ -57,6 +57,7 @@ export class CountryModalComponent implements OnInit {
   }
   public updateImage(event:Event){
     this.image = (event.target as HTMLInputElement).value
+    console.log(this.image);
   }
 
   public loadCountry(country:Country){

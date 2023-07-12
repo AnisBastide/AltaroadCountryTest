@@ -1,9 +1,9 @@
 <div id="body">
 <h1 mat-dialog-title>{{title}}</h1>
 <div mat-dialog-content id="inputs">
-  <input matInput type="number" [placeholder]="'Nom'" [value]="name" (change)="updateName($event)" [disabled]="isModify">
+  <input matInput [placeholder]="'Nom'" [value]="name" (change)="updateName($event)" [disabled]="isModify">
   <input matInput type="number" [placeholder]="'Population'" [value]="population" (change)="updatePopulation($event)">
-  <input matInput [placeholder]="'Superficie'" [value]="size" (change)="updateSize($event)">
+  <input matInput type="number" [placeholder]="'Superficie'" [value]="size" (change)="updateSize($event)">
   <mat-select [value]="continent" (change)="updateContinent($event)">
     <mat-option [value]="continentType.Europe">{{continentType.Europe}}</mat-option>
     <mat-option [value]="continentType.Africa">{{continentType.Africa}}</mat-option>
@@ -13,7 +13,7 @@
     <mat-option [value]="continentType.Oceania">{{continentType.Oceania}}</mat-option>
     </mat-select>
   <input matInput type="number" [placeholder]="'Produit intérieur brut'" [value]="Gdp" (change)="updateGdp($event)">
-  <input matInput [placeholder]="'image'" [value]="image" (change)="updateImage($event)">
+  <input [placeholder]="'image'" [value]="image" (change)="updateImage($event)" type="file">
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Annuler</button>
