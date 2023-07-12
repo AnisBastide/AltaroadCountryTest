@@ -22,3 +22,4 @@ export class CountryDetailsComponent implements OnInit {
      this.country = this.app.filteredCountries[this.id];
   }
 }\
+}
