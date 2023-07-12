@@ -13,7 +13,7 @@ export class CountryModalComponent implements OnInit {
   public population = ""
   public size = ""
   public continent = Continent.Europe
-  public GDP = ""
+  public Gdp = ""
   public image = ""
   public continentType = Continent
   public title = "Ajouter un pays"
@@ -33,10 +33,10 @@ export class CountryModalComponent implements OnInit {
   }
   public addCountry(){
     if(this.isModify){
-      this.countryTable.modifyCountry({name:this.name,population:parseInt(this.population),continent:this.continent,size:parseInt(this.size),GDP:parseInt(this.GDP),image:this.image})
+      this.countryTable.modifyCountry({name:this.name,population:parseInt(this.population),continent:this.continent,size:parseInt(this.size),Gdp:parseInt(this.Gdp),image:this.image})
     }
     else{
-      this.countryTable.addCountry({name:this.name,population:parseInt(this.population),continent:this.continent,size:parseInt(this.size),GDP:parseInt(this.GDP),image:this.image})
+      this.countryTable.addCountry({name:this.name,population:parseInt(this.population),continent:this.continent,size:parseInt(this.size),Gdp:parseInt(this.Gdp),image:this.image})
     }
   }
 
@@ -52,8 +52,8 @@ export class CountryModalComponent implements OnInit {
   public updateContinent(event:Event){
     this.continent = (event.target as HTMLInputElement).value as Continent
   }
-  public updateGDP(event:Event){
-    this.GDP = (event.target as HTMLInputElement).value
+  public updateGdp(event:Event){
+    this.Gdp = (event.target as HTMLInputElement).value
   }
   public updateImage(event:Event){
     this.image = (event.target as HTMLInputElement).value
@@ -64,7 +64,7 @@ export class CountryModalComponent implements OnInit {
     this.population=country.population.toString()
     this.size=country.size.toString()
     this.continent=country.continent
-    this.GDP=country.GDP.toString()
+    this.Gdp=country.Gdp.toString()
     this.image=country.image
   }
 

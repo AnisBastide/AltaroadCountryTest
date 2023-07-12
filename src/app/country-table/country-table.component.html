@@ -2,20 +2,20 @@
 <table>
   <caption>Country List</caption>
   <tr>
-    <th scope="col" ><button (click)="callFilter(filteredCountries,'name')">Nom ⬇</button></th>
-    <th scope="col"><button (click)="callFilter(filteredCountries,'population')">Population ⬇</button></th>
-    <th scope="col"><button (click)="callFilter(filteredCountries,'size')">Superficie ⬇</button></th>
-    <th scope="col"><button (click)="callFilter(filteredCountries,'continent')">Continent ⬇</button></th>
-    <th scope="col"><button (click)="callFilter(filteredCountries,'gdp')">Produit intérieur brut ⬇</button></th>
+    <th scope="col" ><button (click)="callFilter(app.filteredCountries,'name')">Nom ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'population')">Population ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'size')">Superficie ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'continent')">Continent ⬇</button></th>
+    <th scope="col"><button (click)="callFilter(app.filteredCountries,'gdp')">Produit intérieur brut ⬇</button></th>
     <th scope="col">Image</th>
     <th scope="col"></th>
   </tr>
-    <tr *ngFor="let country of filteredCountries; let i = index" [attr.data-index]="i">
+    <tr *ngFor="let country of app.filteredCountries; let i = index">
       <th scope="row"><a href="/details-page/{{i}}">{{country.name}}</a></th>
       <td>{{country.population}}</td>
       <td>{{country.size}}</td>
       <td>{{country.continent}}</td>
-      <td>{{country.GDP}}</td>
+      <td>{{country.Gdp}}</td>
       <td><img src="{{country.image}}" class="images"></td>
       <td><button (click)="openDialog(country)">✏</button></td>
     </tr>

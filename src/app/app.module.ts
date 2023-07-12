@@ -38,7 +38,7 @@ import {CountryModalComponent} from "./country-modal/country-modal.component";
     MatInputModule,
     MatSelectModule,
   ],
-  providers: [CountryTableComponent],
+  providers: [CountryTableComponent,AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

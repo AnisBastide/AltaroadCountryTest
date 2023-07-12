@@ -11,11 +11,11 @@ function comparePopulation(firstCountry:Country, secondCountry:Country) {
   return 0;
 }
 
-function compareGDP(firstCountry:Country, secondCountry:Country) {
-  if (firstCountry.GDP > secondCountry.GDP) {
+function compareGdp(firstCountry:Country, secondCountry:Country) {
+  if (firstCountry.Gdp > secondCountry.Gdp) {
     return -1;
   }
-  if (firstCountry.GDP < secondCountry.GDP) {
+  if (firstCountry.Gdp < secondCountry.Gdp) {
     return 1;
   }
   return 0;
@@ -40,7 +40,6 @@ function compareContinent(firstCountry:Country, secondCountry:Country) {
 }
 
 export function filter(data:Country[], filter:string) {
-  console.log(filter)
   if (filter === "population") {
     data.sort(comparePopulation);
   }
@@ -48,7 +47,7 @@ export function filter(data:Country[], filter:string) {
     data.sort(compareSize);
   }
   if (filter === "gdp") {
-    data.sort(compareGDP);
+    data.sort(compareGdp);
   }
   if (filter === 'name'){
     data.sort(compareName)

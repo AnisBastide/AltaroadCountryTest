@@ -2,7 +2,7 @@
   <div><h1>Gestions des pays</h1>
   </div>
   <div class="buttonContainer">
-    <input type="text" [hidden]="!searchBarVisibility" [value]="searchQuery" (change)="search()"/>
+    <input type="text" [hidden]="!searchBarVisibility" [value]="searchQuery" (input)="search($event)"/>
     <button mat-stroked-button color="Basic" (click)="toggleVisibility()">Recherche</button>
     <button mat-stroked-button color="accent" (click)="csvDownload()">Exporter en CSV</button>
     <div class="buttonSubContainer">

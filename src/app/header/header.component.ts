@@ -3,6 +3,7 @@ import {CountryTableComponent} from "../country-table/country-table.component";
 import {CountryModalComponent} from "../country-modal/country-modal.component";
 import {MatDialog} from "@angular/material/dialog";
 import * as FileSaver from "file-saver";
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   public searchBarVisibility = false
   public searchQuery=''
 
-  constructor(public countryTable:CountryTableComponent,public dialog: MatDialog) { }
+  constructor(public countryTable:CountryTableComponent,public dialog: MatDialog,public app:AppComponent) { }
 
   ngOnInit(): void {
   }
@@ -21,9 +22,8 @@ export class HeaderComponent implements OnInit {
     this.searchBarVisibility = !this.searchBarVisibility
     console.log(this.searchBarVisibility)
   }
-  public search(){
-    console.log('qqqq')
-    this.countryTable.search(this.searchQuery)
+  public search(event:Event){
+    this.countryTable.search(event)
   }
 
   public openDialog(): void {
@@ -35,8 +35,8 @@ export class HeaderComponent implements OnInit {
 
 
   public csvDownload () {
-    const countries = this.countryTable.filteredCountries
-    const headers = ['Name','Population','Size','Continent','GDP','Image']
+    const countries = this.app.filteredCountries
+    const headers = ['name','population','size','continent','Gdp','image']
     if (!countries || !countries.length) {
       return;
     }
@@ -47,10 +47,10 @@ export class HeaderComponent implements OnInit {
       countries
         .map((rowData: any) => {
           return headers.map((headKey:string) => {
-            return rowData [headKey.toLowerCase().replace(' ', '_')] ===
+            return rowData[headKey.replace(' ', '_')] ===
             null ||
-            rowData[headKey.toLowerCase().replace(' ', '_')] ===
-            undefined ? '' : rowData[headKey.toLowerCase().replace(' ', '_')];
+            rowData[headKey.replace(' ', '_')] ===
+            undefined ? '' : rowData[headKey.replace(' ', '_')];
           }).join(separator);
         }).join('\n');
     this.exportFile(csvContent, 'text/csv');
